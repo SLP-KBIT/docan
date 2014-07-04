@@ -1,0 +1,23 @@
+<h1>過去の議事録</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>タイトル</td>
+      <td>議事</td>
+      <td>日付</td>
+    </tr>
+  </thead>
+</table>
+
+<table>
+  <tbody>
+    <% @proceedings.each do |proceeding| %>
+      <tr>
+        <td><%= Proceeding.title %></td>
+        <td><%= Proceeding.sender_id %></td>
+        <td><%= Proceeding.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
