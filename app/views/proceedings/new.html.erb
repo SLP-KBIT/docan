@@ -1,0 +1,24 @@
+<h1>議事録を書く</h1>
+
+<%= form_for(@proceeding) do |f| %>
+  <p>タイトル</p>
+  <%= f.text_field :title %>
+  <br>
+
+  <p>日付</p>
+  <%= f.text_field :date %>
+  <br>
+
+  <p>送信者</p>
+  <%= f.text_field :sender_id %>
+  <br>
+
+  <p>本文</p>
+  <%= f.text_field :content %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= link_to '戻る', proceedings_path %>
