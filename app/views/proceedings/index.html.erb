@@ -2,12 +2,12 @@
 
 <table border=3px>
   <tbody>
+    <tr>
+      <td>タイトル</td>
+      <td>議事</td>
+      <td>日付</td>
+    </tr>
     <% @proceedings.each do |proceeding| %>
-      <tr>
-        <td>タイトル</td>
-        <td>議事</td>
-        <td>日付</td>
-      </tr>
       <tr>
         <td><%= proceeding.title %></td>
         <td><%= proceeding.sender_id %></td>
