@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620114108) do
+ActiveRecord::Schema.define(version: 20140704100506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "assigneds", force: true do |t|
-    t.integer  "member_id"
-    t.integer  "project_id"
-    t.boolean  "is_leader"
-    t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "member_infos", force: true do |t|
     t.integer  "member_id"
@@ -49,8 +40,15 @@ ActiveRecord::Schema.define(version: 20140620114108) do
   end
 
   create_table "old_proceedings", force: true do |t|
+    t.text     "title"
+    t.text     "content"
+    t.integer  "sender_id"
+    t.integer  "project_id"
+    t.datetime "date"
+    t.text     "type_id"
     t.integer  "version"
-    t.integer  "proceeding_id"
+    t.integer  "proceedint_id"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
