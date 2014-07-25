@@ -1,25 +1,27 @@
 <h1>新規作成</h1>
 
-<%= form_for(@proceeding) do |f| %>
-  <p>タイトル</p>
-  <%= f.text_field :title %>
-  <br>
+  <%= form_for @proceeding, html_options: {class:"form"} do |f| %>
+    <div class="form-group">
+      <%= f.label :date, "日付" %><br>
+      <%= f.date_select :date, date_separator: '-' %>
+    </div>
 
-  <p>日付</p>
-  <%= f.date_select(
-      :date,
-      date_separator: '-') %>
-  <br>
+    <div class="form-group">
+      <%= f.label :title, "タイトル" %><br>
+      <%= f.text_field :title %>
+    </div>
 
-  <p>送信者</p>
-  <%= f.text_field :sender_id %>
-  <br>
+    <div class="form-group">
+      <%= f.label :date, "議事" %><br>
+      <%= f.text_field :sender_id %>
+    </div>
 
-  <p>本文</p>
-  <%= f.text_area :content, :size => "70x10" %>
-  <br>
+    <div class="form-group">
+      <%= f.label :date, "本文" %>
+      <%= f.text_area :content, :size => "70x15" %>
+    </div>
 
-  <%= f.submit %>
+    <%= f.submit %>
 
 <% end %>
 
