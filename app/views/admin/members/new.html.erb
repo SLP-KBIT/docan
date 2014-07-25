@@ -1,0 +1,9 @@
+<h1>ユーザ登録</h1>
+
+<hr>
+
+<% if @member.errors.any? %>
+  <%= render partial: 'error_form', locals: { member: @member } %>
+<% elsif %>
+  <%= render partial: 'form', locals: { member: @member } %>
+<% end %>

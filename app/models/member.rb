@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # == Schema Information
 #
 # Table name: members
@@ -15,10 +14,16 @@
 
 class Member < ActiveRecord::Base
   has_secure_password
+  acts_as_paranoid
 
   has_many :member_info
+
+  validates :account, presence: { message: 'アカウント名を入力してください' }
+  validates :name, presence: { message: '氏名を入力してください' }
+  validates :password_digest, presence: { message: 'パスワードを入力してください' }
+  validates :is_admin, inclusion: { in: [true, false] }
   
-  def is_admin?
+  def mark
     return "○" if is_admin
   end
 end
