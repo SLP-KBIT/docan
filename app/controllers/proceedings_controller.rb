@@ -17,8 +17,12 @@ class ProceedingsController < ApplicationController
     end
   end
 
+  def show
+    @proceeding = Proceeding.find(params[:id])
+  end
+
   private
   def proceeding_params
-    params.require(:proceeding).permit(:title, :content)
+    params.require(:proceeding).permit(:title, :date , :sender_id, :content)
   end
 end

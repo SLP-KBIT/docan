@@ -11,7 +11,7 @@
       <tr>
         <td><%= proceeding.title %></td>
         <td><%= proceeding.sender_id %></td>
-        <td><%= proceeding.date %></td>
+        <td><%= proceeding.date.strftime("%Y.%m.%d(%a)") %></td>
       </tr>
     <% end %>
   </tbody>

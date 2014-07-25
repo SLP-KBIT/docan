@@ -6,7 +6,9 @@
   <br>
 
   <p>日付</p>
-  <%= f.text_field :date %>
+  <%= f.date_select(
+      :date,
+      date_separator: '-') %>
   <br>
 
   <p>送信者</p>
