@@ -1,4 +1,4 @@
-<h1>議事録を書く</h1>
+<h1>新規作成</h1>
 
 <%= form_for(@proceeding) do |f| %>
   <p>タイトル</p>
@@ -16,7 +16,7 @@
   <br>
 
   <p>本文</p>
-  <%= f.text_field :content %>
+  <%= f.text_area :content, :size => "70x10" %>
   <br>
 
   <%= f.submit %>
